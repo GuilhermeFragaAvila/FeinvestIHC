@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+  
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script>
+    var taxarendafixa = 1.02;
+    var taxaacoes = 1.025;
+    var taxatesourodireto = 1.03;
+    var taxafundosimobiliarios = 1.035;
+
+    var rendafixa = 0;
+    var acoes = 0;
+    var tesourodireto = 0;
+    var fundosimobiliarios = 0;
+
+function calcInvestimento () {
+
+    var valor = document.getElementById("valor").value;
+    var tempo = document.getElementById("tempo").value;
+    rendafixa = valor*Math.pow(taxarendafixa, tempo);
+    acoes = valor*Math.pow(taxaacoes, tempo);
+    tesourodireto = valor*Math.pow(taxatesourodireto, tempo);
+    fundosimobiliarios = valor*Math.pow(taxafundosimobiliarios, tempo);
+    fundosimobiliarios=Math.round((fundosimobiliarios + Number.EPSILON) * 100) / 100;
+    tesourodireto=Math.round((tesourodireto + Number.EPSILON) * 100) / 100;
+    rendafixa=Math.round((rendafixa + Number.EPSILON) * 100) / 100;
+    acoes=Math.round((acoes + Number.EPSILON) * 100) / 100;
+    document.getElementById("rendafixa").value =rendafixa;
+    document.getElementById("acoes").value =acoes;
+    document.getElementById("tesourodireto").value =tesourodireto;
+    document.getElementById("fundosimobiliarios").value =fundosimobiliarios;
+}
+  </script>
+</head> 
+<body>
+  <div class="navbar-fixed">
+  <nav class="white nav-extended" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">
+        F E I N V E S T
+      </a>
+      <ul class="right hide-on-med-and-down">
+      
+      </ul>
+      <div class="nav-content" style="
+      left: 250px;
+      padding-top: 16px;">
+        <ul class="tabs text-darken-2">  
+          <li class="tab"><a href="#Inicio">Início</a></li>
+          <li class="tab"><a href="#Vantagens">VANTAGENS</a></li>
+          <li class="tab"><a href="#Investimentos">Investimentos</a></li>
+          <li class="tab"><a href="#Simulador">Simulador</a></li>
+          <li class="tab"><a href="#Sobre Nós">Sobre Nós</a></li>
+        </ul>
+      </div>  
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+</div>
+  <div id="inicio" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">F E I N V E S T</h1>
+        <div class="row center">
+          <h5 class="header col s12 light" style="color: #daa520">Um jeito fácil e rápido de simular ganhos dos seus investimentos</h5>
+        </div>
+        <div class="row center">
+          <a href="#Simulador" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">SIMULE JÁ!</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="./img/background1.png" alt="Unsplashed background img 1"></div>
+  </div>
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div id="VANTAGENS" class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4>VANTAGENS</h4>
+            <h5>Veja as vantagens que a Feinvest proporciona para você!</h5>
+          </div>
+        </div>
+        <div  class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><img src="./img/content-1.png"></h2>
+            <h5 class="center">Sem juros!</h5>
+
+            <p class="light">Nós oferecemos as menores taxas de juros e Corretagem mínima!</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><img src="./img/content-2.png"></h2>
+            <h5 class="center">Comece a investir com apenas R$20,00!
+            </h5>
+            <p class="light">Confira as melhores oportunidades de investimento para obter os melhores lucros, começando com um valor inicial de apenas R$20,00.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><img src="./img/content-3.png"></h2>
+            <h5 class="center">Variedade de opções!</h5>
+
+            <p class="light">Tenha quantidades ilimitadas de opções, podendo investir em todas as áreas que você desejar!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 center">
+            <h3><i class="mdi-content-send brown-text"></i></h3>
+            <h4 id="Investimentos">INVESTIMENTOS</h4>
+            <h5>Veja quais são os investimentos para você na Feinvest!</h5>
+          </div>
+        </div>
+        <div class="col s4 center">
+          <h4>Renda Fixa</h4>
+          <h5 class="header col s12 light">Caso deseje uma forma mais segura de rentabilidade, aplique em Renda Fixa e obtenha margens boas de lucro, superando à poupança! A Feinvest encontra as melhores taxas de juros para você, investidor, receber!</h5>
+          <h4>Ações</h4>
+          <h5 class="header col s12 light">Ingresse no mercado de ações e invista nas empresas com maiores margem de lucro a curto e longo prazo. Adquira tanto as ações Ordinárias nominativas, que garante voto em assembléias, quanto as Preferenciais nominativas, garantindo preferência no recebimento de dividendos! Observamos as especulações por você, para que seu precioso tempo seja salvo e seu ganho máximo.</h5>
+          <h4>Tesouro Direto</h4>
+          <h5 class="header col s12 light">Deixe a poupança de lado e invista no tesouro direto para uma rentabilidade melhor! Melhores Taxas para Tesouro Selic, IPCA e Pré-Fixado é na Feinvest.</h5>
+          <h4>Fundos Imobiliários</h4>
+          <h5 class="header col s12 light">Aplique seu capital no meio Imobiliário e obtenha retornos todos os meses baseados nos rendimentos das cotas adquiridas. A Feinvest intercala a sua aplicação com o Fundo de Investimento Imobiliário para que você não se preocupe.</h5>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4 id="Simulador">SIMULADOR</h4>
+          <h5>Simule seus ganhos nos quatro tipos de investimentos.</h5>
+        </div>
+      </div>
+      <p class="left-align light">Entre com um valor para seu investimento:</p>
+      <form class="col s6 offset-s3">
+        <div class="row">
+          <div class="input-field col s6 offset-s3">
+            <input id="valor"  type="number" class="validate" min="20" step=".01">
+            <label for="valor">Valor em reais</label>
+          </div>
+        </div>
+        <p class="left-align light">Entre com um tempo para seu investimento:</p>
+          <div class="row">
+          <div class="input-field col s6 offset-s3">
+            <input id="tempo" type="number" class="validate" min="1" >
+            <label for="tempo">Tempo em meses</label>
+          </div>
+          <div class="col s12 center">
+            <button class="btn waves-effect waves-light" onclick="calcInvestimento()" type="submit">Calcular
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <p class="left-align light">Investindo na Feinvest, os valores esperados são:</p>
+      <p  class="left-align light">Renda Fixa:</p>
+      <input id="rendafixa" type="number" disabled step=".01">
+      <p  class="left-align light">Ações:</p>
+      <input id="acoes" type="number" disabled step=".01">
+      <p  class="left-align light">Tesouro Direto:</p>
+      <input id="tesourodireto" type="number" disabled step=".01">
+      <p  class="left-align light">Fundos Imobiliários:</p>
+      <input id="fundosimobiliarios" type="number" disabled step=".01">
+
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 id="Sobre Nós" class="header col s12 light"></h5>
+          <h1 class="header center teal-text text-lighten-2">F E I N V E S T</h1>
+          <h5 class="header col s12 light" style="color: #daa520">Um jeito fácil e rápido de simular ganhos dos seus investimentos</h5> 
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="./img/background2.png" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4"></p>A Feinvest procura proporcionar a melhor experiência no meio de investimentos, com as melhores oportunidades do mercado. Focando sempre no usuário, desejamos satisfazer desde iniciantes até os mais experientes negociantes do ramo, oferecendo eficiência e segurança em todas as aplicações.
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contate-nos</h5>
+          <ul>
+            <li>
+              <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><img src="./img/email.png" ></a>
+              <a class="white-text" >FeinvestIHC@gmail.com</a>
+            </li>
+            <li>
+              <img src="./img/emailico.png">
+              <a class="white-text">Itabira, Minas Gerais, Brasil</a>  
+            <li>
+              <a href="https://web.whatsapp.com/" target="_blank">
+              <img src="./img/telefoneico.png"></a>
+              <a class="white-text" >(31) 99876-5432</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Redes Sociais</h5>
+          <ul>
+            <li><a href="https://www.facebook.com/" target="_blank">
+              <img class="icones" src="./img/face.png" />
+              <a class="white-text" style="padding-left: 10px;" >FeinvestIHC</a>
+            </a></li>
+            <li><a href="https://twitter.com/" target="_blank">
+              <img class="icones" src="./img/tw.png"/>
+              <a class="white-text" >FeinvestIHC</a>
+            </a></li>
+            <li><a href="https://rss.com/" target="_blank">
+              <img class="icones" src="./img/rss.png"/>
+              <a class="white-text" >FeinvestIHC</a>
+            </a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank">
+              <img class="icones" src="./img/linkedin.png"/>
+              <a class="white-text" >FeinvestIHC</a>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Todos direitos reservados a ©FEINVEST 2021.
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+ 
+
+  </body>
+</html>
